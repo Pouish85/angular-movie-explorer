@@ -1,0 +1,11 @@
+<div class="home-page">
+  <h1>Films Populaires</h1>
+
+  <div *ngIf="popularMovies.length > 0; else noMovies" class="media-grid">
+    <app-media-card *ngFor="let movie of popularMovies" [media]="movie"></app-media-card>
+  </div>
+
+  <ng-template #noMovies>
+    <p>Chargement des films populaires...</p>
+  </ng-template>
+</div>
