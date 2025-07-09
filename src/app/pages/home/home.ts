@@ -54,11 +54,10 @@ export class HomeComponent implements OnInit, OnDestroy {
             ...item,
             media_type: item.media_type || 'movie',
           }));
-          console.log('Films populaires :', this.popularItems);
         },
         error: (error) => {
           console.error(
-            'Erreur lors de la récupération des films populaires :',
+            'Error on popular item fetch :',
             error,
           );
         },
@@ -74,7 +73,6 @@ export class HomeComponent implements OnInit, OnDestroy {
           this.popularItems = response.results.filter(
             (item) => item.media_type !== 'person',
           );
-          console.log('Résultats de recherche :', this.popularItems);
         },
         error: (error) => {
           console.error('Erreur lors de la recherche :', error);

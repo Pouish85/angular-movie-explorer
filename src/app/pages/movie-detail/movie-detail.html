@@ -20,23 +20,30 @@
         />
       </div>
 
-      <div class="info-container">
-        <h1>{{ mediaDetail.title || mediaDetail.name }}</h1>
-        @if (mediaDetail.tagline) {
-          <p class="tagline">{{ mediaDetail.tagline }}</p>
-        }
-        @if (mediaDetail.genres && mediaDetail.genres.length > 0) {
-          <span>Genres : {{ getGenresList() }} </span>
-        }
-        <span
-          >Note : {{ mediaDetail.vote_average | number: "1.1-1" }} / 10 ({{
-            mediaDetail.vote_count
-          }}
-          votes)</span
-        >
+      <div class="right-content">
+        <h1 class="title">{{ mediaDetail.title || mediaDetail.name }}</h1>
+        <div class="item-info">
+          <div class="info-container">
+          @if (mediaDetail.tagline) {
+            <p class="tagline">{{ mediaDetail.tagline }}</p>
+          }
+          @if (mediaDetail.genres && mediaDetail.genres.length > 0) {
+            <span>Genres : {{ getGenresList() }} </span>
+          }
+          <span>Origin Country: {{ getOriginCountry() }}</span>
+          <span
+            >Note : {{ mediaDetail.vote_average | number: "1.1-1" }} / 10 ({{
+              mediaDetail.vote_count
+            }}
+            votes)</span
+          >
+        </div>
+          <div class="item-text">
+            <h3>Synopsis</h3>
+            <p class="overview">{{ mediaDetail.overview }}</p>
+          </div>
+        </div>
       </div>
-      <h3>Synopsis</h3>
-      <p class="overview">{{ mediaDetail.overview }}</p>
     </div>
     <button class="back-button" (click)="goBack()">Retour</button>
   </div>

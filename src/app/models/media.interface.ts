@@ -30,4 +30,5 @@ export interface MediaDetails extends Media {
   episode_run_time?: number[];
   tagline?: string;
   status?: string;
+  origin_country?: string[];
 }

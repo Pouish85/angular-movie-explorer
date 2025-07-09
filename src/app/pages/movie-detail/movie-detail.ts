@@ -51,6 +51,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (data) => {
           this.mediaDetail = data;
+          console.log('Media detail fetched:', this.mediaDetail);
         },
         error: (error) => {
           console.error('Error on media detail fetch :', error);
@@ -81,6 +82,17 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
       this.mediaDetail.genres.length > 0
     ) {
       return this.mediaDetail.genres.map((g) => g.name).join(', ');
+    }
+    return 'N/A';
+  }
+
+  getOriginCountry(): string {
+    if (
+      this.mediaDetail &&
+      this.mediaDetail.origin_country &&
+      this.mediaDetail.origin_country.length > 0
+    ) {
+      return this.mediaDetail.origin_country.map((g) => g).join(', ');
     }
     return 'N/A';
   }

@@ -6,7 +6,7 @@
         [(ngModel)]="searchQuery"
         (input)="onSearchInputChange()"
         (keyup.enter)="onSearchSubmit()"
-        placeholder="Rechercher films ou séries..."
+        placeholder="Search for movies or TV shows..."
         class="search-input"
       />
       <button (click)="onSearchSubmit()" class="search-button">
@@ -16,9 +16,9 @@
 
     <h1>
       @if (searchQuery.length > 0) {
-        Résultats de la recherche pour "{{ searchQuery }}"
+        Search results for "{{ searchQuery }}"
       } @else {
-        Films Populaires
+        Popular Movies
       }
     </h1>
 
