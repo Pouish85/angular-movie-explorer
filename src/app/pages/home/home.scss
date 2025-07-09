@@ -1,30 +1,70 @@
 .home-page {
   padding: 20px;
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px; /* Espace entre l'input et le bouton */
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border: 1px solid #444;
+  border-radius: 25px;
+  background-color: #333;
+  color: #eee;
+  font-size: 1em;
+  outline: none; /* Supprime le contour bleu au focus */
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #007bff;
   }
 
-  section {
-    border: 1px solid rgba(173, 172, 172, 0.78);
-    padding: 5px;
-    border-radius: 10px;
-    margin: 5px 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      justify-content: center;
-    }
+  &::placeholder {
+    color: #aaa;
   }
+}
 
-  // For loading messages
-  p {
-    text-align: center;
-    font-size: 1.1em;
-    color: #888;
+.search-button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
   }
+}
+
+h1 {
+  text-align: center;
+  color: #eee;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+p {
+  text-align: center;
+  color: #bbb;
+  font-size: 1.1em;
+  margin-top: 50px;
 }

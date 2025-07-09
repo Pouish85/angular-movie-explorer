@@ -1,53 +1,58 @@
 .media-card {
-  border: 1px solid #ddd;
+  background-color: #222;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: transform 0.2s ease-in-out;
-  cursor: pointer;
+  height: 492px;
+  width: 208px;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-  }
+.media-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
 
-  .media-card-poster {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-  }
+.media-card-poster {
+  width: 205px;
+  height: 312px;
+  object-fit: cover;
+  display: block;
+}
 
-  .media-card-info {
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
+.media-card-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-  .media-card-title {
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.media-card-title {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .media-card-overview {
-    font-size: 0.9em;
-    color: #666;
-    line-height: 1.4;
-    flex-grow: 1;
-  }
+.media-card-overview {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
 
-  .media-card-rating {
-    font-size: 0.85em;
-    color: #007bff;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+.media-card-rating {
+  font-size: 0.9em;
+  color: #007bff;
+  font-weight: bold;
+  text-align: right;
 }

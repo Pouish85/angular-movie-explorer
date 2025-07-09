@@ -62,4 +62,23 @@ export class MovieService {
       params,
     });
   }
+
+  /**
+   * Search for movies and TV shows by keyword.
+   * Use the /search/multi endpoint for combined results.
+   * @param query
+   * @param page
+   * @returns
+   */
+  searchMedia(query: string, page: number = 1): Observable<MediaApiResponse> {
+    let params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('language', 'fr-FR')
+      .set('query', query)
+      .set('page', page.toString());
+
+    return this.http.get<MediaApiResponse>(`${this.apiUrl}/search/multi`, {
+      params,
+    });
+  }
 }

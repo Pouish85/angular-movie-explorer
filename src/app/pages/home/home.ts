@@ -1,27 +1,42 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Media } from '../../models/media.interface';
-import { Subject, takeUntil } from 'rxjs';
-import { MovieService } from '../../services/movie';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Subject, takeUntil, debounceTime, distinctUntilChanged } from 'rxjs';
+import { MovieService } from '../../services/movie';
 import { MediaCardComponent } from '../../shared/media-card/media-card';
+import { Media } from '../../models/media.interface';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MediaCardComponent],
+  imports: [CommonModule, MediaCardComponent, FormsModule],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styleUrls: ['./home.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  popularMovies: Media[] = [];
-  popularTvShows: Media[] = [];
-  private unsubscribe$ = new Subject();
+  popularItems: Media[] = [];
+  searchQuery: string = '';
+  private searchSubject = new Subject<string>();
+  private unsubscribe$ = new Subject<void>();
 
-  constructor(private movieServices: MovieService) {}
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.getPopularMovies();
-    this.getPopularTvShows();
+
+    this.searchSubject
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        takeUntil(this.unsubscribe$),
+      )
+      .subscribe((query) => {
+        if (query.trim()) {
+          this.performSearch(query);
+        } else {
+          this.getPopularMovies();
+        }
+      });
   }
 
   ngOnDestroy(): void {
@@ -30,36 +45,48 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getPopularMovies(): void {
-    this.movieServices
+    this.movieService
       .getPopularMovies()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (response) => {
-          this.popularMovies = response.results.map((movie) => ({
-            ...movie,
-            media_type: 'movie',
+          this.popularItems = response.results.map((item) => ({
+            ...item,
+            media_type: item.media_type || 'movie',
           }));
+          console.log('Films populaires :', this.popularItems);
         },
         error: (error) => {
-          console.error('Error fetching popular movies:', error);
+          console.error(
+            'Erreur lors de la récupération des films populaires :',
+            error,
+          );
         },
       });
   }
 
-  getPopularTvShows(): void {
-    this.movieServices
-      .getPopularTvShows()
+  performSearch(query: string): void {
+    this.movieService
+      .searchMedia(query)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (response) => {
-          this.popularTvShows = response.results.map((tvShow) => ({
-            ...tvShow,
-            media_type: 'tv',
-          }));
+          this.popularItems = response.results.filter(
+            (item) => item.media_type !== 'person',
+          );
+          console.log('Résultats de recherche :', this.popularItems);
         },
         error: (error) => {
-          console.error('Error fetching popular TV Shows:', error);
+          console.error('Erreur lors de la recherche :', error);
         },
       });
+  }
+
+  onSearchInputChange(): void {
+    this.searchSubject.next(this.searchQuery);
+  }
+
+  onSearchSubmit(): void {
+    this.searchSubject.next(this.searchQuery);
   }
 }

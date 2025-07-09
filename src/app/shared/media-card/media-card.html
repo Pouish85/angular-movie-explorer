@@ -4,8 +4,8 @@
 >
   <img
     [ngSrc]="getPosterUrl(media.poster_path)"
-    [width]="media.poster_path ? '400' : '200'"
-    [height]="media.poster_path ? '600' : '300'"
+    width="200"
+    height="300"
     [alt]="media.title || media.name"
     class="media-card-poster"
     onerror="this.src='assets/placeholder.jpg';"
