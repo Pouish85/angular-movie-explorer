@@ -1,11 +1,33 @@
 <div class="home-page">
-  <h1>Films Populaires</h1>
+  <section>
+    <h1>Popular Movies</h1>
 
-  <div *ngIf="popularMovies.length > 0; else noMovies" class="media-grid">
-    <app-media-card *ngFor="let movie of popularMovies" [media]="movie"></app-media-card>
-  </div>
+    @if (popularMovies.length > 0) {
+      <div class="media-grid">
+        @for (movie of popularMovies; track movie.id) {
+          <app-media-card [media]="movie"></app-media-card>
+        } @empty {
+          <p>Aucun film populaire trouvé pour le moment.</p>
+        }
+      </div>
+    } @else {
+      <p>Data loading...</p>
+    }
+  </section>
 
-  <ng-template #noMovies>
-    <p>Chargement des films populaires...</p>
-  </ng-template>
+  <section>
+    <h1>Popular TV Shows</h1>
+
+    @if (popularTvShows.length > 0) {
+      <div class="media-grid">
+        @for (tvShow of popularTvShows; track tvShow.id) {
+          <app-media-card [media]="tvShow"></app-media-card>
+        } @empty {
+          <p>Aucune série télé populaire trouvée pour le moment.</p>
+        }
+      </div>
+    } @else {
+      <p>Data loading...</p>
+    }
+  </section>
 </div>

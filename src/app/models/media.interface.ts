@@ -1,4 +1,4 @@
-export interface  Media {
+export interface Media {
   id: number;
   title?: string;
   name?: string;
@@ -25,7 +25,7 @@ export interface MediaApiResponse {
 }
 
 export interface MediaDetails extends Media {
-  genres: {id: number; name: string}[];
+  genres: { id: number; name: string }[];
   runtime?: number;
   episode_run_time?: number[];
   tagline?: string;

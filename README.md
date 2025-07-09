@@ -1,4 +1,4 @@
-<!-- <div align="center" id="top"> 
+<!-- <div align="center" id="top">
   <img src="./.github/app.gif" alt="Angular Movie Explorer" />
 
   &#xa0;
@@ -27,7 +27,7 @@
 
 <h4 align="center"> 
 	🚧  Angular Movie Explorer 🚀 Under construction...  🚧
-</h4> 
+</h4>
 
 <hr>
 
@@ -43,18 +43,17 @@
 
 <br>
 
-## :dart: About ##
+## :dart: About
 
 This project is an **Angular web application** designed to explore and discover movies and TV shows. It will leverage the **TMDB (The Movie Database) API** to fetch comprehensive data. This is my very first project developed with the Angular framework, serving as a hands-on learning experience to grasp its core concepts and best practices for modern frontend development.
 
-
-## :sparkles: Features ##
+## :sparkles: Features
 
 <!-- :heavy_check_mark: Feature 1;\
 :heavy_check_mark: Feature 2;\
 :heavy_check_mark: Feature 3; -->
 
-## :rocket: Technologies ##
+## :rocket: Technologies
 
 The following tools were used in this project:
 
@@ -64,11 +63,11 @@ The following tools were used in this project:
 - [Sass (SCSS)](https://sass-lang.com/)
 - [The Movie Database (TMDB) API](https://developer.themoviedb.org/docs)
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Requirements
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Node.js](https://nodejs.org/) (which includes npm), and [Angular CLI](https://angular.io/cli) installed.
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Starting
 
 To get this project up and running on your local machine, follow these steps.
 
@@ -103,10 +102,9 @@ ng build
 
 The compiled build artifacts will be stored in the dist/ directory.
 
-## :memo: License ##
+## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
 
 Made with :heart: by <a href="https://github.com/Pouish85" target="_blank">Pouish85</a>
 

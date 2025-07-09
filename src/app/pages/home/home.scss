@@ -6,14 +6,22 @@
     color: #333;
   }
 
-  .media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Colonnes responsives
-    gap: 20px;
-    justify-content: center; // Centre les cartes dans la grille
+  section {
+    border: 1px solid rgba(173, 172, 172, 0.78);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
   }
 
-  // Pour le message de chargement
+  // For loading messages
   p {
     text-align: center;
     font-size: 1.1em;

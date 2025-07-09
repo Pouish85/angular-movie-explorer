@@ -1,13 +1,20 @@
-<div class="media-card">
+<div
+  class="media-card"
+  [routerLink]="['/', media.media_type === 'movie' ? 'movie' : 'tv', media.id]"
+>
   <img
-    [src]="getPosterUrl(media.poster_path)"
+    [ngSrc]="getPosterUrl(media.poster_path)"
+    [width]="media.poster_path ? '400' : '200'"
+    [height]="media.poster_path ? '600' : '300'"
     [alt]="media.title || media.name"
     class="media-card-poster"
-    onerror="this.src='assets/placeholder.jpg';" >
+    onerror="this.src='assets/placeholder.jpg';"
+  />
   <div class="media-card-info">
     <h3 class="media-card-title">{{ media.title || media.name }}</h3>
-    <p class="media-card-overview">{{ media.overview | slice:0:100 }}...</p> <div class="media-card-rating">
-      Note : {{ media.vote_average | number:'1.1-1' }} / 10
+    <p class="media-card-overview">{{ media.overview | slice: 0 : 100 }}...</p>
+    <div class="media-card-rating">
+      Note : {{ media.vote_average | number: "1.1-1" }} / 10
     </div>
   </div>
 </div>
