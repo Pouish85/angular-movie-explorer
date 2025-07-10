@@ -1,4 +1,4 @@
-<div id="top" style="align-content: center; display: flex; justify-content: center; margin-top: 20px" id="top">
+<div id="top" style="align-content: center; display: flex; justify-content: center; margin-top: 20px; width: 100%" id="top">
   <img src="./assets/images/logo.png" alt="Angular Movie Explorer" style="border-radius: 10px; width: 200px" />
 
 &#xa0;
