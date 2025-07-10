@@ -3,9 +3,9 @@
   <img src="./assets/images/logo.png" alt="Angular Movie Explorer" style="width: 250px" />
 </div>
 
-<h1 style="align-content: center; text-align: center; font-size: xxx-large">Angular Movie Explorer</h1>
+<h1 align="center" style="text-align: center; font-size: xxx-large">Angular Movie Explorer</h1>
 
-<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px">
+<p align="center" style="width: 100%; display: flex; justify-content: center; gap: 5px">
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/Pouish85/angular-movie-explorer?color=56BEB8">
 
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/Pouish85/angular-movie-explorer?color=56BEB8">
@@ -16,7 +16,7 @@
 
 </p>
 <br>
-<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px">
+<p align="center" style="width: 100%; display: flex; justify-content: center; gap: 5px">
 
   <img alt="Angular Version" src="https://img.shields.io/badge/Angular-17.x-ED213A?style=flat&logo=angular&logoColor=white"> 
   
@@ -30,7 +30,7 @@
 
 </p>
 
-<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px">
+<p align="center" style="width: 100%; display: flex; justify-content: center; gap: 5px">
   <img alt="Github stars" src="https://img.shields.io/github/stars/Pouish85/angular-movie-explorer?color=56BEB8" />
 
   <img alt="Github forks" src="https://img.shields.io/github/forks/Pouish85/angular-movie-explorer?color=56BEB8" />
@@ -43,7 +43,7 @@
 
 <hr>
 
-<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px; font-size: small">
+<p align="center" style="width: 100%; display: flex; justify-content: center; gap: 5px; font-size: small">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
@@ -122,21 +122,21 @@ The compiled build artifacts will be stored in the dist/ directory.
 
 ## :tv: Preview
 
-<div style="align-content: center">
+<div align="center">
   <h3>Home Page (Popular Movies)</h3>
   <img alt="Preview Landing" src="./assets/images/app-screenshot-landing.png" style="max-width: 800px; display: block; margin: 0 auto; border-radius: 10px" />
 </div>
 
 <br>
 
-<div style="align-content: center">
+<div align="center">
   <h3>Search Results</h3>
   <img alt="Preview Search Results" src="./assets/images/app-screenshot-search.png" style="max-width: 800px; display: block; margin: 0 auto; border-radius: 10px" />
 </div>
 
 <br>
 
-<div style="align-content: center">
+<div align="center">
   <h3>Item Detail Page</h3>
   <img alt="Preview Item Detailed Page" src="./assets/images/app-screenshot-item-details.png" style="max-width: 800px; display: block; margin: 0 auto; border-radius: 10px" />
 </div>
