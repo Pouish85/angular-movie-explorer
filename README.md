@@ -1,34 +1,24 @@
-<!-- <div align="center" id="top">
-  <img src="./.github/app.gif" alt="Angular Movie Explorer" />
+<div id="top" style="align-content: center; display: flex; justify-content: center; margin-top: 20px" id="top">
+  <img src="./assets/images/logo.png" alt="Angular Movie Explorer" style="border-radius: 10px; width: 200px" />
 
-  &#xa0;
+&#xa0;
 
-</div> -->
+</div>
 
-<h1 align="center">Angular Movie Explorer</h1>
+<h1 style="align-content: center; text-align: center; font-size: xxx-large">Angular Movie Explorer</h1>
 
-<p align="center">
+<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px">
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/Pouish85/angular-movie-explorer?color=56BEB8">
 
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/Pouish85/angular-movie-explorer?color=56BEB8">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Pouish85/angular-movie-explorer?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/Pouish85/angular-movie-explorer?color=56BEB8" />
-
-  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Pouish85/angular-movie-explorer?color=56BEB8">
-
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/Pouish85/angular-movie-explorer?color=56BEB8">
-
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/Pouish85/angular-movie-explorer?color=56BEB8">
-
-  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Pouish85/angular-movie-explorer?color=56BEB8">
-
   <img alt="License" src="https://img.shields.io/github/license/Pouish85/angular-movie-explorer?color=56BEB8">
 
 </p>
 <br>
-<p align="center">
+<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px">
 
   <img alt="Angular Version" src="https://img.shields.io/badge/Angular-17.x-ED213A?style=flat&logo=angular&logoColor=white"> 
   
@@ -42,7 +32,7 @@
 
 </p>
 
-<p align="center">
+<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px">
   <img alt="Github stars" src="https://img.shields.io/github/stars/Pouish85/angular-movie-explorer?color=56BEB8" />
 
   <img alt="Github forks" src="https://img.shields.io/github/forks/Pouish85/angular-movie-explorer?color=56BEB8" />
@@ -53,18 +43,15 @@
 
 <!-- Status -->
 
-<h4 align="center"> 
-	🚧  Angular Movie Explorer 🚀 Under construction...  🚧
-</h4>
-
 <hr>
 
-<p align="center">
+<p style="align-content: center; width: 100%; display: flex; justify-content: center; gap: 5px; font-size: small">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#tv-preview">Preview</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/Pouish85" target="_blank">Author</a>
 </p>
@@ -77,9 +64,14 @@ This project is an **Angular web application** designed to explore and discover 
 
 ## :sparkles: Features
 
-<!-- :heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3; -->
+- :heavy_check_mark: **Popular Movies Exploration** : Easily browse the latest trending movies.
+- :heavy_check_mark: **Intuitive Search Functionality** : Quickly find movies or TV shows by title using a responsive search bar.
+- :heavy_check_mark: **Detailed Media Information** : View comprehensive details for each movie or TV show (overview, rating, genres, release date, etc.).
+- :heavy_check_mark: **Smooth Pagination Navigation** : Effortlessly navigate through large collections of media with efficient pagination controls.
+- :heavy_check_mark: **Loading Indicators** : Enhanced user experience with visible spinners during data fetching.
+- :heavy_check_mark: **Responsive User Interface** : Enjoy an adaptive and pleasant application experience across all devices (desktops, tablets, mobile phones).
+- :heavy_check_mark: **Reusable Components** : Modular architecture built with Angular components for improved maintainability.
+- :heavy_check_mark: **API Data Handling** : Seamless integration and manipulation of data from The Movie Database (TMDB) API.
 
 ## :rocket: Technologies
 
@@ -130,9 +122,30 @@ ng build
 
 The compiled build artifacts will be stored in the dist/ directory.
 
+## :tv: Preview
+
+<div style="align-content: center">
+  <h3>Home Page (Popular Movies)</h3>
+  <img alt="Preview Landing" src="./assets/images/app-screenshot-landing.png" style="max-width: 800px; display: block; margin: 0 auto; border-radius: 10px" />
+</div>
+
+<br>
+
+<div style="align-content: center">
+  <h3>Search Results</h3>
+  <img alt="Preview Search Results" src="./assets/images/app-screenshot-search.png" style="max-width: 800px; display: block; margin: 0 auto; border-radius: 10px" />
+</div>
+
+<br>
+
+<div style="align-content: center">
+  <h3>Item Detail Page</h3>
+  <img alt="Preview Item Detailed Page" src="./assets/images/app-screenshot-item-details.png" style="max-width: 800px; display: block; margin: 0 auto; border-radius: 10px" />
+</div>
+
 ## :memo: License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 Made with :heart: by <a href="https://github.com/Pouish85" target="_blank">Pouish85</a>
 
