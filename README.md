@@ -1,5 +1,5 @@
 
-<div style="align-content: center" id="top"> 
+<div align="center" id="top"> 
   <img src="./assets/images/logo.png" alt="Angular Movie Explorer" style="width: 250px" />
 </div>
 
