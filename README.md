@@ -8,20 +8,48 @@
 <h1 align="center">Angular Movie Explorer</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Pouish85/angular-movie-explorer?color=56BEB8">
-
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/Pouish85/angular-movie-explorer?color=56BEB8">
+
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Pouish85/angular-movie-explorer?color=56BEB8">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Pouish85/angular-movie-explorer?color=56BEB8">
 
+  <img alt="Github issues" src="https://img.shields.io/github/issues/Pouish85/angular-movie-explorer?color=56BEB8" />
+
+  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Pouish85/angular-movie-explorer?color=56BEB8">
+
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/Pouish85/angular-movie-explorer?color=56BEB8">
+
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/Pouish85/angular-movie-explorer?color=56BEB8">
+
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Pouish85/angular-movie-explorer?color=56BEB8">
+
   <img alt="License" src="https://img.shields.io/github/license/Pouish85/angular-movie-explorer?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/Pouish85/angular-movie-explorer?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/Pouish85/angular-movie-explorer?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/Pouish85/angular-movie-explorer?color=56BEB8" /> -->
 </p>
+<br>
+<p align="center">
+
+  <img alt="Angular Version" src="https://img.shields.io/badge/Angular-17.x-ED213A?style=flat&logo=angular&logoColor=white"> 
+  
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white">
+
+  <img alt="Node.js Version" src="https://img.shields.io/node/v/npm?color=56BEB8">
+
+  <img alt="npm" src="https://img.shields.io/npm/v/@angular/cli?label=Angular%20CLI%20Version&color=56BEB8">
+
+  <img alt="TMDB API" src="https://img.shields.io/badge/TMDB%20API-000000?style=flat&logo=themoviedb&logoColor=white">
+
+</p>
+
+<p align="center">
+  <img alt="Github stars" src="https://img.shields.io/github/stars/Pouish85/angular-movie-explorer?color=56BEB8" />
+
+  <img alt="Github forks" src="https://img.shields.io/github/forks/Pouish85/angular-movie-explorer?color=56BEB8" />
+
+  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/Pouish85/angular-movie-explorer?color=56BEB8">
+
+  </p>
 
 <!-- Status -->
 

@@ -97,6 +97,13 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
     return 'N/A';
   }
 
+  getYear(): string {
+    if (this.mediaDetail && this.mediaDetail.release_date) {
+      return this.mediaDetail.release_date.split('-')[0];
+    }
+    return 'N/A';
+  }
+
   goBack(): void {
     this.router.navigate(['/']);
   }
