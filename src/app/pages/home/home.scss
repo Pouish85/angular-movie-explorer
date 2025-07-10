@@ -112,3 +112,49 @@ p {
     cursor: default;
   }
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px; /* Assure un espace suffisant pour le spinner */
+  color: #eee;
+  font-size: 1.2em;
+  margin-top: 50px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Couleur claire pour le bord du spinner */
+  border-top: 4px solid #007bff; /* Couleur d'accentuation pour la partie animée */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Animation de rotation */
+  margin-bottom: 20px; /* Espace sous le spinner */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajustement du message "Aucun média trouvé" pour être toujours visible si besoin */
+.home-page p {
+  text-align: center;
+  color: #bbb;
+  font-size: 1.1em;
+  margin-top: 20px; /* Ajusté pour ne pas être trop haut si le spinner n'est pas là */
+}
+
+/* S'assurer que le titre est bien centré */
+h1 {
+  text-align: center;
+  color: #eee;
+  margin-bottom: 30px;
+  font-size: 2em;
+}

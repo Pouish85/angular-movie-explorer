@@ -1,0 +1,16 @@
+<header class="app-header">
+  <div class="logo">
+    <a [routerLink]="['/']">Movie Explorer</a>
+  </div>
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="onSearchInputChange()"
+      (keyup.enter)="onSearchSubmit()"
+      placeholder="Search movie or TV Show..."
+      class="search-input"
+    />
+    <button (click)="onSearchSubmit()" class="search-button">Search</button>
+  </div>
+</header>

@@ -30,6 +30,7 @@
             @if (mediaDetail.genres && mediaDetail.genres.length > 0) {
               <span>Genres : {{ getGenresList() }} </span>
             }
+            <span>Year: {{ getYear() }}</span>
             <span>Origin Country: {{ getOriginCountry() }}</span>
             <span
               >Note : {{ mediaDetail.vote_average | number: "1.1-1" }} / 10 ({{
