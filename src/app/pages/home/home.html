@@ -1,0 +1,65 @@
+<div class="home-page">
+  <section>
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (input)="onSearchInputChange()"
+        (keyup.enter)="onSearchSubmit()"
+        placeholder="Search for movies or TV shows..."
+        class="search-input"
+      />
+      <button (click)="onSearchSubmit()" class="search-button">
+        Rechercher
+      </button>
+    </div>
+
+    <h1>
+      @if (searchQuery.length > 0) {
+        Search results for "{{ searchQuery }}"
+      } @else {
+        Popular Movies
+      }
+    </h1>
+
+    @if (popularItems.length > 0) {
+      <div class="media-grid">
+        @for (item of popularItems | slice: 0 : 5; track item.id) {
+          <app-media-card [media]="item"></app-media-card>
+        } @empty {
+          <p>Aucun média trouvé.</p>
+        }
+      </div>
+
+      <div class="pagination-controls">
+        <button
+          (click)="prevPage()"
+          [disabled]="currentPage === 1"
+          class="pagination-button"
+        >
+          Précédent
+        </button>
+
+        @for (page of pageNumbers; track page) {
+          <button
+            (click)="goToPage(page)"
+            [class.active]="currentPage === page"
+            class="pagination-button page-number-button"
+          >
+            {{ page }}
+          </button>
+        }
+
+        <button
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages"
+          class="pagination-button"
+        >
+          Suivant
+        </button>
+      </div>
+    } @else {
+      <p>Chargement des médias...</p>
+    }
+  </section>
+</div>
