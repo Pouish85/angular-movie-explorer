@@ -68,3 +68,47 @@ p {
   font-size: 1.1em;
   margin-top: 50px;
 }
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+
+  &:hover:not([disabled]) {
+    background-color: #0056b3;
+  }
+
+  &[disabled] {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+}
+
+.pagination-button.page-number-button {
+  background-color: #444;
+  color: #eee;
+
+  &:hover:not(.active) {
+    background-color: #666;
+  }
+
+  &.active {
+    background-color: #007bff;
+    font-weight: bold;
+    cursor: default;
+  }
+}

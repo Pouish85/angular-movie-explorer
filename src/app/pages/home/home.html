@@ -30,6 +30,34 @@
           <p>Aucun média trouvé.</p>
         }
       </div>
+
+      <div class="pagination-controls">
+        <button
+          (click)="prevPage()"
+          [disabled]="currentPage === 1"
+          class="pagination-button"
+        >
+          Précédent
+        </button>
+
+        @for (page of pageNumbers; track page) {
+          <button
+            (click)="goToPage(page)"
+            [class.active]="currentPage === page"
+            class="pagination-button page-number-button"
+          >
+            {{ page }}
+          </button>
+        }
+
+        <button
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages"
+          class="pagination-button"
+        >
+          Suivant
+        </button>
+      </div>
     } @else {
       <p>Chargement des médias...</p>
     }

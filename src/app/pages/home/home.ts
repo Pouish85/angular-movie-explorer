@@ -16,13 +16,17 @@ import { Media } from '../../models/media.interface';
 export class HomeComponent implements OnInit, OnDestroy {
   popularItems: Media[] = [];
   searchQuery: string = '';
+  currentPage: number = 1;
+  totalPages: number = 1;
+  currentMode: 'popular' | 'search' = 'popular';
+
   private searchSubject = new Subject<string>();
   private unsubscribe$ = new Subject<void>();
 
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.getPopularMovies();
+    this.loadContent();
 
     this.searchSubject
       .pipe(
@@ -32,8 +36,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       )
       .subscribe((query) => {
         if (query.trim()) {
+          this.currentMode = 'search';
           this.performSearch(query);
         } else {
+          this.currentMode = 'popular';
           this.getPopularMovies();
         }
       });
@@ -44,9 +50,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
+  loadContent(): void {
+    if (this.currentMode === 'popular') {
+      this.getPopularMovies();
+    } else if (this.currentMode === 'search') {
+      this.performSearch(this.searchQuery);
+    }
+  }
+
   getPopularMovies(): void {
     this.movieService
-      .getPopularMovies()
+      .getPopularMovies(this.currentPage)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (response) => {
@@ -54,25 +68,24 @@ export class HomeComponent implements OnInit, OnDestroy {
             ...item,
             media_type: item.media_type || 'movie',
           }));
+          this.totalPages = response.total_pages;
         },
         error: (error) => {
-          console.error(
-            'Error on popular item fetch :',
-            error,
-          );
+          console.error('Error on popular item fetch :', error);
         },
       });
   }
 
   performSearch(query: string): void {
     this.movieService
-      .searchMedia(query)
+      .searchMedia(query, this.currentPage)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (response) => {
           this.popularItems = response.results.filter(
             (item) => item.media_type !== 'person',
           );
+          this.totalPages = response.total_pages;
         },
         error: (error) => {
           console.error('Erreur lors de la recherche :', error);
@@ -86,5 +99,32 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onSearchSubmit(): void {
     this.searchSubject.next(this.searchQuery);
+  }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages && page !== this.currentPage) {
+      this.currentPage = page;
+      this.loadContent();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  nextPage(): void {
+    this.goToPage(this.currentPage + 1);
+  }
+
+  prevPage(): void {
+    this.goToPage(this.currentPage - 1);
+  }
+
+  get pageNumbers(): number[] {
+    const pages: number[] = [];
+    const startPage = Math.max(1, this.currentPage - 2);
+    const endPage = Math.min(this.totalPages, this.currentPage + 2);
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+    return pages;
   }
 }
