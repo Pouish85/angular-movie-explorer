@@ -24,7 +24,7 @@
 
     @if (popularItems.length > 0) {
       <div class="media-grid">
-        @for (item of popularItems; track item.id) {
+        @for (item of popularItems | slice: 0 : 5; track item.id) {
           <app-media-card [media]="item"></app-media-card>
         } @empty {
           <p>Aucun média trouvé.</p>
