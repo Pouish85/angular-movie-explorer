@@ -18,7 +18,7 @@
 <br>
 <p align="center" style="width: 100%; display: flex; justify-content: center; gap: 5px">
 
-  <img alt="Angular Version" src="https://img.shields.io/badge/Angular-17.x-ED213A?style=flat&logo=angular&logoColor=white"> 
+  <img alt="Angular Version" src="https://img.shields.io/badge/Angular-20.x-ED213A?style=flat&logo=angular&logoColor=white"> 
   
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white">
 
